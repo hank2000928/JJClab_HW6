@@ -37,8 +37,21 @@
 
 ------------------------------------------
 # 練習 7. su / sudo 與 sudoers.d
-## 7-1. 限制 su，僅特定帳號可用 sudo su -
+為預防誤鎖su權限，最後再做7-1
+
+## 7-2. 為 myadmin 建立獨立 sudoers 設定
+創建myadmin帳號，密碼設置123456789
+<img width="718" height="248" alt="image" src="https://github.com/user-attachments/assets/d8cc4d24-5bd3-4925-a9b5-ef19998a8e82" />
 
 
+利用visudo -f /etc/sudoers.d/myadmin，新增myadmin ALL=(ALL) ALL，意思是：
+myadmin 可以透過 sudo 執行所有管理指令，但仍需輸入自己的密碼。
+<img width="715" height="169" alt="image" src="https://github.com/user-attachments/assets/a7657172-12dc-4ad2-8da0-b3a6ff04e9a4" />
 
+存檔退出後，確認權限：  
+<img width="723" height="285" alt="image" src="https://github.com/user-attachments/assets/e275b847-3d06-46f1-ad8a-72f6bda29b35" />
 
+切換至myadmin測試:  
+<img width="732" height="608" alt="image" src="https://github.com/user-attachments/assets/5b33a974-2f67-44eb-b7d5-1b57dc9cfb81" />
+
+## 7-3. poweroff 群組可關機
