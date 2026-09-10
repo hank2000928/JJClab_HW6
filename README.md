@@ -69,4 +69,21 @@ myadmin 可以透過 sudo 執行所有管理指令，但仍需輸入自己的密
 
 ## 7-1. 限制 su，僅特定帳號可用 sudo su -
 
+建立wheel group，納入須有su權限的user
 <img width="719" height="218" alt="image" src="https://github.com/user-attachments/assets/af5e1408-a38d-4341-9146-f0042e24cacb" />
+
+確認PAM檔案
+<img width="712" height="487" alt="image" src="https://github.com/user-attachments/assets/7b0c5432-8530-4f4f-bf7b-ca98f1e959e7" />
+
+vi /etc/pam.d/su 修改如下(修改前、後對比)
+<img width="725" height="249" alt="image" src="https://github.com/user-attachments/assets/5373c4e3-ef8e-4bbe-8b48-5921b4a469a7" />
+<img width="717" height="259" alt="image" src="https://github.com/user-attachments/assets/76565ac6-f73a-496e-9966-97a8a6b7fd1b" />
+
+同樣在 pam_rootok.so 修改成：
+<img width="698" height="279" alt="image" src="https://github.com/user-attachments/assets/450de5f1-aa5a-4d37-8260-b57b20eeee50" />
+
+實測，alice無su權限: 
+<img width="716" height="257" alt="image" src="https://github.com/user-attachments/assets/b3c2e733-d90c-45dc-8c45-8ef7ef503865" />
+
+最後實測myadmin，具有su權限: 
+<img width="713" height="256" alt="image" src="https://github.com/user-attachments/assets/0c27eb13-222b-4683-9258-49d6e3140650" />
