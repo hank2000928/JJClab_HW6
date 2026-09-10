@@ -55,3 +55,18 @@ myadmin 可以透過 sudo 執行所有管理指令，但仍需輸入自己的密
 <img width="732" height="608" alt="image" src="https://github.com/user-attachments/assets/5b33a974-2f67-44eb-b7d5-1b57dc9cfb81" />
 
 ## 7-3. poweroff 群組可關機
+建立poweroff群組後，將bob加入群組
+<img width="704" height="136" alt="image" src="https://github.com/user-attachments/assets/40eba873-f640-4172-813e-3b4fa519e8e2" />
+
+確認關機指令實際路徑後，用<visudo -f /etc/sudoers.d/poweroff>寫入: 
+<img width="717" height="165" alt="image" src="https://github.com/user-attachments/assets/ba76eb30-0c3a-4901-98be-7fe0f8e71f2c" />
+
+<img width="723" height="84" alt="image" src="https://github.com/user-attachments/assets/6c209120-832e-410c-82f2-1c1efb484db0" />
+
+驗證bob具有 poweroff / shutdown 相關權限。
+<img width="712" height="181" alt="image" src="https://github.com/user-attachments/assets/33afa40f-6580-46e0-8a91-6eefcd7a3e3b" />
+<img width="705" height="177" alt="image" src="https://github.com/user-attachments/assets/c9b3fcd4-92db-4686-aa38-21ec3e680420" />
+
+## 7-1. 限制 su，僅特定帳號可用 sudo su -
+
+<img width="719" height="218" alt="image" src="https://github.com/user-attachments/assets/af5e1408-a38d-4341-9146-f0042e24cacb" />
